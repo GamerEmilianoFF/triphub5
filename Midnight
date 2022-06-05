@@ -2,9 +2,12 @@
 
 -- Midnight  
 
+
+-- Sentinel  
+
 local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
 
-local Window = Library.CreateLib("TRIP HUB 2.2 [👑] ", "Midnight")
+local Window = Library.CreateLib("TRIP HUB [👑]", "Midnight")
 
 local Tab = Window:NewTab("scripts")
 
@@ -195,10 +198,9 @@ script.Parent.Text = ("Ping: " ..game:GetService("Stats").Network.ServerStatsIte
 end)
 end)
 
-Section:NewButton("fly bypass v3", "fly bypass", function()
- 
-loadstring(game:HttpGet("https://pastebin.com/Dg2WFaMU",true))()
-    end)
+Section:NewButton("fly bypass", "fly bypass", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/27G3MXgD",true))()
+end)
 
 Section:NewButton("auto stomp", "ButtonInfo", function()
     
@@ -218,37 +220,6 @@ Section:NewButton("server finder", "buscador de sevidores", function()
     loadstring(game:HttpGet("https://www.scriptblox.com/raw/Server-Browser_80", true))();
 
 end)
-Section:NewButton("join server 5 players", "players", function()
-    
-    local Http = game:GetService("HttpService")
-local TPS = game:GetService("TeleportService")
-local Api = "https://games.roblox.com/v1/games/"
-
-local _place = game.PlaceId
-local _servers = Api.._place.."/servers/Public?sortOrder=Asc&limit=100"
-function ListServers(cursor)
-   local Raw = game:HttpGet(_servers .. ((cursor and "&cursor="..cursor) or ""))
-   return Http:JSONDecode(Raw)
-end
-
-local Server, Next; repeat
-   local Servers = ListServers(Next)
-   Server = Servers.data[1]
-   Next = Servers.nextPageCursor
-until Server
-
-TPS:TeleportToPlaceInstance(_place,Server.id,game.Players.LocalPlayer)
-end)
-
-Section:NewButton("chat spy", "chat", function()
-    
-loadstring(game:HttpGet('https://pastebin.com/raw/TBRu2TW5'))()
-
-end)
-
-
-
-
 Section:NewButton("kick me gui", "kick", function()
     local MainToggle = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
@@ -278,19 +249,9 @@ x.TextSize = 25.000
 x.MouseButton1Down:connect(function()
 game.Players.LocalPlayer:Kick("exit server!")
 end)
-end)
-Section:NewLabel("esp")
-Section:NewButton("esp", "esp", function()
-    spawn(loadstring(game:HttpGet("https://pastebin.com/raw/zKjj0TQD", true)))();
-end)
-Section:NewButton("hit box", "hit box", function()
-   
-loadstring(game:HttpGet('https://pastebin.com/raw/P90LrpCG'))()
+
 
 end)
-local Tab = Window:NewTab("player")
-local Section = Tab:NewSection("Local Player")
-
 
 Section:NewButton("Headless", "Client Sided", function()
 
@@ -330,13 +291,29 @@ local ply = game.Players.LocalPlayer
 
 end)
 
-Section:NewButton("korblox and hedless gui", "korblox", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/GamerEmilianoFF/kor_hed_gui/main/Gui",true))()
+local Section = Tab:NewSection("basic!")
+
+Section:NewButton("Chat Spy", "You Can see All Chat", function()
+
+   
+
+loadstring(game:HttpGet('https://pastebin.com/raw/TBRu2TW5'))()
+
 end)
 
+Section:NewButton("Hitbox", "7 Hitbox", function()
 
+   
 
+loadstring(game:HttpGet('https://pastebin.com/raw/P90LrpCG'))()
 
+end)
+
+Section:NewButton("No fog", "Remove all shadow and more..", function()
+
+loadstring(game:HttpGet("https://pastebin.com/raw/06iG6YkU", true))()
+
+end)
 
 local Tab = Window:NewTab("cursors")
 
@@ -354,7 +331,7 @@ local Cursor = Instance.new("ImageLabel")
 
 local Hitmarker = Instance.new("ImageLabel")
 
-IAPortable.Name = "IA Portable"
+IAPortable.Name = "IAPortable"
 
 IAPortable.Parent = game:GetService('CoreGui')
 
@@ -388,7 +365,7 @@ local Cursor = Instance.new("ImageLabel")
 
 local Hitmarker = Instance.new("ImageLabel")
 
-IAPortable.Name = "IA Portable"
+IAPortable.Name = "IAPortable"
 
 IAPortable.Parent = game:GetService('CoreGui')
 
@@ -426,7 +403,7 @@ local Cursor = Instance.new("ImageLabel")
 
 local Hitmarker = Instance.new("ImageLabel")
 
-IAPortable.Name = "IA Portable"
+IAPortable.Name = "IAPortable"
 
 IAPortable.Parent = game:GetService('CoreGui')
 
@@ -466,7 +443,7 @@ local Cursor = Instance.new("ImageLabel")
 
 local Hitmarker = Instance.new("ImageLabel")
 
-IAPortable.Name = "IA Portable"
+IAPortable.Name = "IAPortable"
 
 IAPortable.Parent = game:GetService('CoreGui')
 
@@ -492,92 +469,16 @@ Cursor.Position = UDim2.new(0.5, 0, 0.5, 0)
 
 end)
 
-Section:NewLabel("coming soon!")
+Section:NewLabel("destroy cursors")
+Section:NewButton("destroy cursor custom", "cursor", function()
+game.CoreGui.IAPortable:Destroy()
+end)
 
 local Tab = Window:NewTab("Aimlock")
 
 local Section = Tab:NewSection("Aimlock")
 
 
-Section:NewButton("silent aim", "silent aim", function()
-    getgenv().Target = true
--- Configuration
-getgenv().Key = Enum.KeyCode.Q
-getgenv().Prediction = 0.12405
-getgenv().ChatMode = false
-getgenv().NotifMode = true
-    getgenv().PartMode = true
-    getgenv().AirshotFunccc = true
-    getgenv().Partz = "HumanoidRootPart"
-getgenv().AutoPrediction = false
---
-    _G.Types = {
-        Ball = Enum.PartType.Ball,
-        Block = Enum.PartType.Block, 
-        Cylinder = Enum.PartType.Cylinder
-    }
-    
-    --variables                 
-    	local Tracer = Instance.new("Part", game.Workspace)
-    Tracer.Name = "gay"	
-    Tracer.Anchored = true		
-    Tracer.CanCollide = false
-    Tracer.Transparency = 0.8
-    Tracer.Parent = game.Workspace	
-    Tracer.Shape = _G.Types.Block
-    Tracer.Size = Vector3.new(14,14,14)
-    Tracer.Color = Color3.fromRGB(255,7,255)
-    
-    --
-    local plr = game.Players.LocalPlayer
-local mouse = plr:GetMouse()
-local Runserv = game:GetService("RunService")
-
-circle = Drawing.new("Circle")
-circle.Color = Color3.fromRGB(171,0,255)
-circle.Thickness = 0
-circle.NumSides = 732
-circle.Radius = 120
-circle.Thickness = 0
-circle.Transparency = 0.7
-circle.Visible = true
-circle.Filled = false
-
-Runserv.RenderStepped:Connect(function()
-    circle.Position = Vector2.new(mouse.X,mouse.Y+35)
-end)
-    
-    	local guimain = Instance.new("Folder", game.CoreGui)
-    	local CC = game:GetService"Workspace".CurrentCamera
-    local LocalMouse = game.Players.LocalPlayer:GetMouse()
-    	local Locking = false
-    
-    	
-    --
-    if getgenv().valiansh == true then
-                        game.StarterGui:SetCore("SendNotification", {
-                   Title = "Valiant",
-                   Text = "Already Loaded!",
-                   Duration = 5
-        
-                   })
-        return
-    end
-    
-    getgenv().valiansh = true
-    
-        local UserInputService = game:GetService("UserInputService")
-
-    
-end)
-
-Section:NewButton("Aim tool for mob", "Tools Lock", function()
-
-   
-
-loadstring(game:HttpGet('https://pastebin.com/raw/HA8kAiYp'))()
-
-end)
 
 Section:NewButton("aim ware (q)", "Aimbot", function()
 
@@ -595,6 +496,39 @@ end)
 
 local Section = Tab:NewSection("More Coming Soon !")
 
+local Tab = Window:NewTab("other hubs")
+
+local Section = Tab:NewSection("hubs for hood modded")
+
+Section:NewLabel("GUI FOR MOB")
+
+Section:NewButton("trip gui", "trip gui", function()
+
+    loadstring(game:HttpGet('\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\71\97\109\101\114\69\109\105\108\105\97\110\111\70\70\47\116\114\105\112\47\109\97\105\110\47\71\117\105\10'))()
+
+end)
+
+Section:NewLabel("HUBS FOR PC")
+
+Section:NewLabel("SOLO PARA PC")
+
+Section:NewButton("soft vortex", "soft vortex", function()
+
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/Airsoft0001/69/main/69"),true))()
+
+end)
+
+Section:NewButton("Oblivion", "oblivion", function()
+
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CorruptOblivion/Oblivion/main/loader.lua"))()
+
+end)
+
+Section:NewButton("Crimskid DHM ", "Crimskid DHM ", function()
+
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/finobe7650/dhm/main/crimskid"))()
+
+end)
 
 local Tab = Window:NewTab("fov")
 
@@ -786,38 +720,24 @@ Section:NewButton("Anti lag (-30 fps)", "ButtonInfo", function()
 
 end)
 
-local Tab = Window:NewTab("rtx")
+local Tab = Window:NewTab("esp")
 
-local Section = Tab:NewSection("rtx")
+local Section = Tab:NewSection("esp")
 
-Section:NewButton("rtx ", "rtx", function()
-    --script tardecer
-loadstring(game:HttpGet("https://pastebin.com/raw/jZvZsZWB",true))()
+Section:NewButton("esp", "ver donde están las personas", function()
 
+    print("se ah activado esp!")
 
-end)
-
-Section:NewButton("rtx day", "rtx", function()
-    --script day
-loadstring(game:HttpGet("https://pastebin.com/raw/DRDAAq1Y",true))()
-
+    loadstring(game:HttpGet("https://pastebin.com/raw/zKjj0TQD", true))()
 
 end)
 
-Section:NewButton("rtx night", "rtx", function()
-    
-loadstring(game:HttpGet("https://pastebin.com/raw/MSZPFVfE",true))()
+Section:NewButton("esp v2", "esp v2", function()
 
+loadstring(game:HttpGet("https://pastebin.com/88tUvRt2",true))()
 
 end)
 
-Section:NewButton("rtx negative", "rtx", function()
-    loadstring(game:HttpGet("https://pastebin.com/raw/xZj8Xut9",true))()
-end)
-
-Section:NewButton("rtx sumer", "rtx", function()
-    loadstring(game:HttpGet("https://pastebin.com/raw/UYdDycdt",true))()
-end)
 local Tab = Window:NewTab("Animation (FE)")
 
 local Section = Tab:NewSection("Animation (FE)")
