@@ -211,7 +211,7 @@ end)
 
 Section:NewButton("trash talk", "click para enviar mensajes rápidos", function()
 
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/GamerEmilianoFF/script/main/Trash%20gui",true))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/GamerEmilianoFF/GamerEmilianoFF/main/trash%20gui",true))()
 
 end)
 
