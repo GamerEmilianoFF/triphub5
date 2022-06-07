@@ -494,6 +494,9 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/GamerEmilianoFF/aim/m
 
 end)
 
+Section:NewButton("silent aim", "aim lock", function()
+loadstring(game:HttpGet('https://pastebin.com/raw/HGQ2EnRw'))()
+end)
 local Section = Tab:NewSection("More Coming Soon !")
 
 local Tab = Window:NewTab("other hubs")
